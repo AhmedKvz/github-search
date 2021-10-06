@@ -52,6 +52,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  max-width: 1920px;
+  width: 100%;
 }
 
 header {
@@ -134,10 +136,10 @@ header {
 }
 
 .avatar{
-    background-color: red;
     height: 120px;
     width: 120px;
     border-radius: 100%;
+    background-size: 100% 100%;
 }
 
 .name-date{
