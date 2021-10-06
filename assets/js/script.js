@@ -13,6 +13,7 @@ const company = document.querySelector(".company")
 const body = document.querySelector("body")
 const button = document.querySelector(".search-btn")
 const input = document.querySelector(".search-input")
+const colorLight = document.querySelector(".color-light")
 
 const loadUser = (username) => {
     fetch(`https://api.github.com/users/${username}`).then((response)=>{
@@ -22,13 +23,13 @@ const loadUser = (username) => {
         }
         else
         {
-            console.log("Error")
+            document.querySelector(".no-result").classList.add("visible")
         }
     }
     ).then((data)=>{
         console.log(data)
         const dateGit = new Date(data.created_at)
-        //avatarGit.style.backgroundImage = url(data.avatar_url)
+        avatarGit.querySelector("img").src = data.avatar_url
         nameGit.innerHTML = data.name === "" || data.name === null ? data.login : data.name
         date.innerHTML = dateGit.getDate()+" "+dateGit.toLocaleString("default", { month: "short" })+" "+dateGit.getFullYear()
         usernameGit.innerHTML = "@" + data.login
@@ -38,11 +39,76 @@ const loadUser = (username) => {
         following.innerHTML = data.following
         city.innerHTML = data.location === "" || data.location === null ? "Not Available" : data.location
         blog.innerHTML = data.blog === "" || data.blog === null ? "Not Available" : data.blog
-        twitter.innerHTML = data.twitter === "" || data.twitter === null ? "Not Available" : data.twitter
+        twitter.innerHTML = data.twitter_username === "" || data.twitter_username === null ? "Not Available" : data.twitter_username
         company.innerHTML = data.company === "" || data.company === null ? "Not Available" : data.company
     }).catch((error)=>{
-
+        console.log(error)
     })
 }
 
-body.addEventListener("load",loadUser("octocat"))
+window.addEventListener("load",(e)=>{
+    loadUser("octocat")
+    if(localStorage.getItem('theme')==='light')
+    {
+        document.documentElement.classList.add("light")
+        document.documentElement.classList.remove("dark")
+    }
+    else if(localStorage.getItem('theme')==='dark')
+    {
+        document.documentElement.classList.add("dark")
+        document.documentElement.classList.remove("light")
+    }
+    else
+    {
+        if(window.matchMedia('(prefers-color-scheme: dark)'))
+        {
+            document.documentElement.classList.add("dark")
+            localStorage.setItem('theme','dark')
+        }
+        else
+        {
+            document.documentElement.classList.add("light")
+            localStorage.setItem('theme','light')
+        }
+    }
+    console.log(localStorage)
+})
+button.addEventListener("click",function(){
+    loadUser(input.value)
+})
+input.addEventListener("keypress",function(e){
+    if(e.key==="Enter")
+    {
+        loadUser(input.value)
+    }
+})
+
+
+colorLight.addEventListener("click",function(){
+    if(localStorage.getItem('theme')==='light')
+    {
+        document.documentElement.classList.remove("light")
+        document.documentElement.classList.add("dark")
+        localStorage.setItem('theme','dark')
+    }
+    else if(localStorage.getItem('theme')==='dark')
+    {
+        document.documentElement.classList.remove("dark")
+        document.documentElement.classList.add("light")
+        localStorage.setItem('theme','light')
+    }
+    else
+    {
+        if(window.matchMedia('(prefers-color-scheme: dark)'))
+        {
+            document.documentElement.classList.add("dark")
+            localStorage.setItem('theme','dark')
+        }
+        else
+        {
+            document.documentElement.classList.add("light")
+            localStorage.setItem('theme','light')
+        }
+    }
+    console.log(localStorage)
+})
