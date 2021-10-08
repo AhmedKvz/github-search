@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
-:root,:root.light {
+:root,
+:root.light {
   --primary-blue: #0079ff;
   --primary-blue-hover: #60abff;
   --primary-text: #4b6a9b;
@@ -10,25 +11,31 @@
   --primary-background-light: #fefefe;
   --primary-text-error: #f74646;
   --primary-filter: brightness(100%);
-  --mode-text:"DARK";
-  --mode-image:url('/assets/icon-moon.svg');
+  --mode-text: "DARK ";
+  --mode-image: url("/assets/icon-moon.svg");
+  --hover-mode: #222731;
   --primary-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
+  --mask-colour:#4B6A9B;
+  --button: #ffffff;
 }
 
 :root.dark {
-    --primary-blue: #0079FF;
-    --primary-blue-hover: #60ABFF;
-    --primary-text: #FFFFFF;
-    --primary-text-neutral: #FFFFFF;
-    --primary-text-bold: #FFFFFF;
-    --primary-background: #141d2f;
-    --primary-background-light: #1E2A47;
-    --primary-text-error: #F74646;
-    --primary-filter: initial;
-    --mode-text:"LIGHT";
-    --mode-image:url('/assets/icon-sun.svg');
-    --primary-box-shadow: 0;
-    
+  --primary-blue: #0079ff;
+  --primary-blue-hover: #60abff;
+  --primary-text: #ffffff;
+  --primary-text-neutral: #ffffff;
+  --primary-text-bold: #ffffff;
+  --primary-background: #141d2f;
+  --primary-background-light: #1e2a47;
+  --primary-text-error: #f74646;
+  --primary-filter: initial;
+  --mode-text: "LIGHT ";
+  --mode-image: url("/assets/icon-sun.svg");
+  --hover-mode: #90a4d4;
+  --primary-box-shadow: 0;
+  --mask-colour:#f3eaea;
+  --button: #ffffff;
+
 }
 
 * {
@@ -40,6 +47,7 @@
 html,
 body {
   background-color: var(--primary-background);
+  color: var(--primary-text);
   min-height: 100vh;
   font-family: "Space Mono", monospace;
   font-size: 15px;
@@ -47,13 +55,13 @@ body {
   position: relative;
 }
 
-.wrapper{
-    max-width: 1920px;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.wrapper {
+  max-width: 1920px;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container {
@@ -62,11 +70,45 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 50%;
+  width: 100%;
+  max-width: 730px;
 }
 
+/************* Change of Theme ******************/
+
+
+.color-theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .color-light {
+    background-repeat: no-repeat;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 19px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+  }
+  
+  
+  .color-light::after {
+    content: var(--mode-text);
+  }
+  
+  .color-light:hover {
+    cursor: pointer;
+    color: var(--hover-mode);
+  }
+  
+  /************* Change of Theme ******************/
+
+  /************* Header  ******************/
+
+
 header {
-  margin: auto;
+  margin-bottom: 2%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -76,8 +118,30 @@ header {
 }
 
 .logo {
-    color: var(--primary-text);
+  color: var(--primary-text-bold);
+  
 }
+
+.mode-picture img{
+    width: 20px;
+}
+
+.mode-picture{
+    background-color: var(--mask-colour);
+    -webkit-mask: var(--mode-image) no-repeat center;
+    mask: var(--mode-image) no-repeat center;
+    transition:background-color 0.5s;
+}
+
+.mode-picture:hover {
+    color: var(--mask-colour);
+}
+
+  /************* Header  ******************/
+
+    /************* Search GitHUb  ******************/
+
+
 
 .search-gitHub {
   display: flex;
@@ -85,6 +149,14 @@ header {
   width: 100%;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 3%;
+  background-color: var(--primary-background-light);
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  box-shadow: var(--primary-box-shadow);
 }
 
 .search-input {
@@ -98,23 +170,16 @@ header {
   font-size: 18px;
   line-height: 25px;
   color: var(--primary-text-bold);
-  background-color: var(--primary-background-color);
+  background-color: var(--primary-background-light);
   background-image: url("/assets/icon-search.svg");
   background-repeat: no-repeat;
   cursor: pointer;
 }
 
-.color-light{
-    background-image: var(--mode-image);
-}
-
-.color-light::after{
-    content: var(--mode-text);
-}
-
 .search-btn {
+  margin-right: 1%;
   background-color: var(--primary-blue);
-  color: var(--primary-text);
+  color: var(--button);
   width: 6.625rem;
   padding: 13px 24px;
   outline: 0;
@@ -127,100 +192,245 @@ header {
 }
 
 .search-btn:hover {
-    background-color: var(--primary-blue-hover);
+  background-color: var(--primary-blue-hover);
 }
 .no-result {
   display: none;
   width: 25%;
+  color: var(--primary-text-error);
 }
 
-.visible{
-    display:flex;
+.visible {
+  display: flex;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    background-color: green;
-    padding:10px;
+ /************* Search GitHUb  ******************/
+
+  /************* User Card  ******************/
+
+.card {
+  padding: 48px;
+  background-color: var(--primary-background-light);
+  box-shadow: var(--primary-box-shadow);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: 100%;
+  max-width: 730px;
+  border-radius: 15px;
 }
 
-.user-container-main{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+.user-container-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
-.user-info{
-    display: flex;
-    flex-direction: column;
-    width: 75%;
-    margin-left: 10px;
+.user-info {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 10px;
 }
 
-.avatar{
-    height: 120px;
-    width: 120px;
-    border-radius: 100%;
-    background-size: 100% 100%;
+.avatar {
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
+  background-size: 100% 100%;
 }
 
-.avatar img{
-    height: 120px;
-    width: 120px;
-    border-radius: 100%;
+.avatar img {
+  height: 120px;
+  width: 120px;
+  border-radius: 100%;
 }
 
-.name-date{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.name-date {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2%;
 }
 
-.stats{
-    padding:10px;
-    display: flex;
-    justify-content: space-around;
-    background-color: orange;
-    margin-left: 100px;
+.name {
+  font-size: 1.625rem;
 }
 
-.links{
-    margin-left: 100px;
-    display: flex;
+.username {
+  color: var(--primary-blue);
+  font-size: 1rem;
+  padding-bottom: 2%;
 }
 
-.links > div{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    padding:10px;
-    width: 50%;
+.stats {
+  padding: 10px 10px 10px 0;
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--primary-background);
+  margin-left: 140px;
 }
 
-.links > div div{
-    display: flex;
-    padding:10px;
-    justify-content: flex-start;
-    width: 100%;
+.biography {
+  margin-bottom: 7%;
 }
 
-@media (prefers-color-scheme:dark) {
-    :root {
-        --primary-blue: #0079FF;
-        --primary-blue-hover: #60ABFF;
-        --primary-text: #FFFFFF;
-        --primary-text-neutral: #FFFFFF;
-        --primary-text-bold: #FFFFFF;
-        --primary-background: #141d2f;
-        --primary-background-light: #1E2A47;
-        --primary-text-error: #F74646;
-        --primary-filter: initial;
-        --mode-text:"LIGHT";
-        --mode-image:url('/assets/icon-sun.svg');
-        --primary-box-shadow: 0;
+.links {
+  margin-left: 100px;
+  display: flex;
+}
+
+.links > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 10px;
+  width: 50%;
+  margin-left: 5%;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.links > div div {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.links > div div img {
+    margin-right: 4%;
+}
+
+ /************* User Card  ******************/
+
+ @media screen and (max-width:810px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
+    .wrapper {
+        width: 80%;
+    }
+
+    .links > div div {
+        font-size: 0.9rem;  
+    }
+
+    .links > div div img {
+        height: 50%;
+    }
+
+    @media screen and (max-width:414px) {
+        header {
+            margin-bottom: 5%;
+        }
+
+        .search-gitHub {
+            margin-bottom: 10%;
+        }
+
+        .search-input {
+            font-size: 12px;
+        }
+
+        .no-result {
+            font-size: 8px;
+        }
+
+        .user-container-main {
+            height: 100%;
+            max-height: 517px;
+            display: flex;
+            position: relative;
+        }
+
+        .avatar img {
+            position: absolute;
+            top: 0px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .name {
+            font-size: 1rem;
+            font-weight: 700;
+            width: 100%;
+        }
+
+        .user-info {
+            margin-left: -7px;
+        }
+
+        .biography-container {
+            padding-top: 20%;
+            margin-left: -100px;
+        }
+
+        .stats {
+            margin-left: 0;
+        }
+
+
+        .links {
+            font-size: 0.5rem;
+            margin-left: 0;
+            margin-top: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: center;
+        }
+        
+        .links > div {
+            margin-left: -170px;
+        }
+
+        .links > img {
+            margin-right: 10px;
+        }
+
+       
+
+       .stats {
+           font-size: 0.8rem;
+           text-align: center;
+           padding: 10px;
+       }
+
+       .repository-container {
+           padding: 10px;
+       }
+
+       .follower-container {
+           padding: 10px;
+       }
+
+       .following-container {
+           padding: 10px;
+       }
+    }
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-blue: #0079ff;
+    --primary-blue-hover: #60abff;
+    --primary-text: #ffffff;
+    --primary-text-neutral: #ffffff;
+    --primary-text-bold: #ffffff;
+    --primary-background: #141d2f;
+    --primary-background-light: #1e2a47;
+    --primary-text-error: #f74646;
+    --primary-filter: initial;
+    --mode-text: "LIGHT";
+    --mode-image: url("/assets/icon-sun.svg");
+    --primary-box-shadow: 0;
+  }
 }
+ }
+
