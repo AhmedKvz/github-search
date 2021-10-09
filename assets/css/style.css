@@ -6,7 +6,7 @@
   --primary-blue-hover: #60abff;
   --primary-text: #4b6a9b;
   --primary-text-neutral: #697c9a;
-  --primary-text-bold: #2b3442;
+  --primary-text-bold: #2B3442;
   --primary-background: #f6f8ff;
   --primary-background-light: #fefefe;
   --primary-text-error: #f74646;
@@ -50,9 +50,10 @@ body {
   color: var(--primary-text);
   min-height: 100vh;
   font-family: "Space Mono", monospace;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 25px;
   position: relative;
+ 
 }
 
 .wrapper {
@@ -95,6 +96,7 @@ body {
   
   .color-light::after {
     content: var(--mode-text);
+    margin-right: 10px;
   }
   
   .color-light:hover {
@@ -140,8 +142,7 @@ header {
   /************* Header  ******************/
 
     /************* Search GitHUb  ******************/
-
-
+ 
 
 .search-gitHub {
   display: flex;
@@ -157,6 +158,7 @@ header {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
   box-shadow: var(--primary-box-shadow);
+  cursor: pointer;
 }
 
 .search-input {
@@ -177,6 +179,8 @@ header {
 }
 
 .search-btn {
+  font-weight: 700;
+  size: 1rem;
   margin-right: 1%;
   background-color: var(--primary-blue);
   color: var(--button);
@@ -189,6 +193,7 @@ header {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  cursor: pointer;
 }
 
 .search-btn:hover {
@@ -255,7 +260,16 @@ header {
 }
 
 .name {
+  margin-top: 7%;
   font-size: 1.625rem;
+  font-weight: 700;
+  color: var(--primary-text-bold);
+}
+
+.date {
+  margin-top: 7%;
+  font-size: 0.938rem;
+  font-weight: 400;
 }
 
 .username {
@@ -272,8 +286,23 @@ header {
   margin-left: 140px;
 }
 
+.repository,
+.follower,
+.following {
+  font-weight: 700;
+  font-size: 1.375rem;
+  color: var(--primary-text-bold);
+}
+
+
 .biography {
+  margin-top: 4%;
   margin-bottom: 7%;
+  font-size: 0.938rem;
+  width: 100%;
+  max-width: 480px;
+  opacity: 0.75;
+  
 }
 
 .links {
@@ -298,10 +327,38 @@ header {
   padding: 10px;
   justify-content: flex-start;
   width: 100%;
+  font-size: 0.938rem;
+  font-weight: 400;
+  color: var(--primary-text);
 }
 
 .links > div div img {
-    margin-right: 4%;
+    margin-right: 10%;
+}
+
+.blog {
+  text-decoration: none;
+  color: var(--primary-text);
+
+}
+
+.blog:hover {
+  text-decoration: underline;
+}
+
+.twitter {
+  opacity: 0.5;
+}
+
+.company {
+  text-decoration: none;
+  color: var(--primary-text);
+}
+
+
+.company:hover {
+  text-decoration: underline;
+  color: var(--primary-text);
 }
 
  /************* User Card  ******************/

@@ -36,7 +36,7 @@ const loadUser = (username) => {
         nameGit.innerHTML = data.name === "" || data.name === null ? data.login : data.name;
         date.innerHTML = dateGit.getDate()+" "+dateGit.toLocaleString("default", { month: "short" })+" "+dateGit.getFullYear();
         usernameGit.innerHTML = "@" + data.login;
-        biography.innerHTML = data.bio === "" || data.bio === null ? "This User has no bio" : data.bio;
+        biography.innerHTML = data.bio === "" || data.bio === null ? "This Profile has no bio" : data.bio;
         repository.innerHTML = data.public_repos;
         follower.innerHTML = data.followers;
         following.innerHTML = data.following;
