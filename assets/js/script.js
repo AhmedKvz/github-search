@@ -7,7 +7,7 @@ const repository = document.querySelector(".repository");
 const follower = document.querySelector(".follower");
 const following = document.querySelector(".following");
 const city = document.querySelector(".city");
-const blog = document.querySelector(".blog");
+const blogGit = document.querySelector(".blog");
 const twitter = document.querySelector(".twitter");
 const company = document.querySelector(".company");
 const body = document.querySelector("body");
@@ -41,13 +41,14 @@ const loadUser = (username) => {
         follower.innerHTML = data.followers;
         following.innerHTML = data.following;
         city.innerHTML = data.location === "" || data.location === null ? "Not Available" : data.location;
-        blog.innerHTML = data.blog === "" || data.blog === null ? "Not Available" : data.blog;
+        blogGit.innerHTML = data.blog === "" || data.blog === null ? "Not Available" : data.blog;
         twitter.innerHTML = data.twitter_username === "" || data.twitter_username === null ? "Not Available" : data.twitter_username;
         company.innerHTML = data.company === "" || data.company === null ? "Not Available" : data.company;
     }).catch((error)=>{
         console.log(error);
     })
 }
+
 
 window.addEventListener("load",(e)=>{
     loadUser("octocat");

@@ -6,7 +6,7 @@
   --primary-blue-hover: #60abff;
   --primary-text: #4b6a9b;
   --primary-text-neutral: #697c9a;
-  --primary-text-bold: #2B3442;
+  --primary-text-bold: #2b3442;
   --primary-background: #f6f8ff;
   --primary-background-light: #fefefe;
   --primary-text-error: #f74646;
@@ -15,7 +15,7 @@
   --mode-image: url("/assets/icon-moon.svg");
   --hover-mode: #222731;
   --primary-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
-  --mask-colour:#4B6A9B;
+  --mask-colour: #4b6a9b;
   --button: #ffffff;
 }
 
@@ -33,9 +33,8 @@
   --mode-image: url("/assets/icon-sun.svg");
   --hover-mode: #90a4d4;
   --primary-box-shadow: 0;
-  --mask-colour:#f3eaea;
+  --mask-colour: #f3eaea;
   --button: #ffffff;
-
 }
 
 * {
@@ -53,7 +52,6 @@ body {
   font-size: 16px;
   line-height: 25px;
   position: relative;
- 
 }
 
 .wrapper {
@@ -77,37 +75,34 @@ body {
 
 /************* Change of Theme ******************/
 
-
 .color-theme {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .color-light {
-    background-repeat: no-repeat;
-    font-size: 13px;
-    font-weight: 700;
-    line-height: 19px;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-  }
-  
-  
-  .color-light::after {
-    content: var(--mode-text);
-    margin-right: 10px;
-  }
-  
-  .color-light:hover {
-    cursor: pointer;
-    color: var(--hover-mode);
-  }
-  
-  /************* Change of Theme ******************/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  /************* Header  ******************/
+.color-light {
+  background-repeat: no-repeat;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
 
+.color-light::after {
+  content: var(--mode-text);
+  margin-right: 10px;
+}
+
+.color-light:hover {
+  cursor: pointer;
+  color: var(--hover-mode);
+}
+
+/************* Change of Theme ******************/
+
+/************* Header  ******************/
 
 header {
   margin-bottom: 2%;
@@ -121,28 +116,26 @@ header {
 
 .logo {
   color: var(--primary-text-bold);
-  
 }
 
-.mode-picture img{
-    width: 20px;
+.mode-picture img {
+  width: 20px;
 }
 
-.mode-picture{
-    background-color: var(--mask-colour);
-    -webkit-mask: var(--mode-image) no-repeat center;
-    mask: var(--mode-image) no-repeat center;
-    transition:background-color 0.5s;
+.mode-picture {
+  background-color: var(--mask-colour);
+  -webkit-mask: var(--mode-image) no-repeat center;
+  mask: var(--mode-image) no-repeat center;
+  transition: background-color 0.5s;
 }
 
 .mode-picture:hover {
-    color: var(--mask-colour);
+  color: var(--mask-colour);
 }
 
-  /************* Header  ******************/
+/************* Header  ******************/
 
-    /************* Search GitHUb  ******************/
- 
+/************* Search GitHUb  ******************/
 
 .search-gitHub {
   display: flex;
@@ -209,9 +202,9 @@ header {
   display: flex;
 }
 
- /************* Search GitHUb  ******************/
+/************* Search GitHUb  ******************/
 
-  /************* User Card  ******************/
+/************* User Card  ******************/
 
 .card {
   padding: 48px;
@@ -284,6 +277,7 @@ header {
   justify-content: space-around;
   background-color: var(--primary-background);
   margin-left: 140px;
+  border-radius: 10px;
 }
 
 .repository,
@@ -294,7 +288,6 @@ header {
   color: var(--primary-text-bold);
 }
 
-
 .biography {
   margin-top: 4%;
   margin-bottom: 7%;
@@ -302,7 +295,6 @@ header {
   width: 100%;
   max-width: 480px;
   opacity: 0.75;
-  
 }
 
 .links {
@@ -333,13 +325,14 @@ header {
 }
 
 .links > div div img {
-    margin-right: 10%;
+  margin-right: 10%;
+  height: 20px;
+  color: var(--button);
 }
 
 .blog {
   text-decoration: none;
   color: var(--primary-text);
-
 }
 
 .blog:hover {
@@ -355,163 +348,262 @@ header {
   color: var(--primary-text);
 }
 
-
 .company:hover {
   text-decoration: underline;
   color: var(--primary-text);
 }
 
- /************* User Card  ******************/
+/************* User Card  ******************/
 
- @media screen and (max-width:810px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+/************* Media Query  ******************/
+
+/************* Tablets 810  ******************/
+@media screen and (max-width: 810px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 570px;
+    height: 100%;
+    max-height: 648px;
+  }
+
+  header {
+    margin-bottom: 10%;
+  }
+
+
+  .no-result {
+    width: 100%;
+  }
+
+  .avatar {
+    margin-top: -20%;
+  }
+
+  .name-date {
+    display: flex;
+    flex-direction: column;
+    margin-left: -30%;
+    margin-top: -10%;
+  }
+
+  .name {
+    margin-bottom: 5%;
+  }
+
+  .date {
+    margin-top: 5%;
+    margin-left: -15%;
+  }
+
+  .username {
+    margin-top: -20%;
+    margin-left: 10%;
+  }
+
+  .biography-container {
+    margin-top: 8%;
+    margin-left: -37%;
+    width: 100%;
+    max-width: 493px;
+  }
+
+  .stats {
+    margin-left: 0;
+  }
+
+  .links {
+    margin-left: -10%;
+  }
+
+  .links > div div {
+    font-size: 0.9rem;
+    align-items: center;
+  }
+
+  .links > div div img {
+    height: 20px;
+    color: var(--button);
+  }
+
+  /************* Phones 414  ******************/
+
+  @media screen and (max-width: 414px) {
     .wrapper {
-        width: 80%;
+      width: 80%;
+    }
+
+    .container {
+      margin-top: -28%;
+    }
+
+    header {
+      margin-bottom: 15%;
+    }
+
+    .search-gitHub {
+      margin-bottom: 8%;
+    }
+
+    .search-input {
+      font-size: 12px;
+    }
+
+    .no-result {
+      font-size: 8px;
+      width: 100%;
+    }
+
+    .avatar {
+      margin-top: -15%;
+    }
+
+    .avatar img {
+      margin-left: -31%;
+      margin-top: -19%;
+      width: 70px;
+      height: 70px;
+    }
+
+    .name-date {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 11%;
+      margin-left: -5%;
+    }
+
+    
+    .name {
+      font-size: 1rem;
+      font-weight: 700;
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .date {
+      transform: translateY(-80%);
+      margin-top: 24%;
+      margin-left: -65px;
+    }
+
+    .username {
+      margin-top: -14%;
+      margin-left: -3%;
+    }
+
+
+    .biography-container {
+      margin-top: -5%;
+      padding-top: 41%;
+      margin-left: -95px;
+      width: 100%;
+      max-width: 279px;
+    }
+
+    .user-container-main {
+      height: 100%;
+      max-height: 517px;
+      display: flex;
+    }
+
+    .username-container {
+      margin-top: -44%;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      margin-left: -7px;
+      width: 106%;
+    }
+
+    .stats {
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 10px 135px;
+      width: 100%;
+      max-width: 279px;
+      margin-left: -28px;
+    }
+
+    .repository-container {
+      font-size: 0.688rem;
+      padding: 10px 30px;
+    }
+
+    .follower-container {
+      font-size: 0.688rem;
+      padding: 10px 0;
+    }
+
+    .following-container {
+      font-size: 0.688rem;
+      padding: 10px 30px;
+    }
+
+    .repository,
+    .follower,
+    .following {
+      font-size: 1rem;
+    }
+
+
+    .links {
+      font-size: 0.5rem;
+      margin-left: -46px;
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: start;
+      align-items: center;
+      width: 151%;
+    }
+
+    .links > div {
+      margin-left: -170px;
+      margin-top: -20px;
     }
 
     .links > div div {
-        font-size: 0.9rem;  
+      width: 110%;
+      max-width: 150%;
     }
 
-    .links > div div img {
-        height: 50%;
+    .links > img {
+      margin-right: 10px;
     }
 
-    @media screen and (max-width:414px) {
-        
-        header {
-            margin-bottom: 5%;
-        }
-
-        .search-gitHub {
-            margin-bottom: 10%;
-        }
-
-        .search-input {
-            font-size: 12px;
-        }
-
-        .no-result {
-            font-size: 8px;
-        }
-
-        .user-container-main {
-            height: 100%;
-            max-height: 517px;
-            display: flex;
-            
-        }
-
-        .username-container {
-            margin-top: -44%
-        }
-
-        .name-date {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .avatar img {
-            margin-left: -31%;
-            margin-top: -19%;
-            width: 70px;
-            height: 70px;
-        }
-
-        .name {
-            font-size: 1rem;
-            font-weight: 700;
-            width: 100%;
-            margin-top: 0;
-        }
-
-
-        .date {
-            margin-top: 24%;
-            margin-left: -65px;
-        }
-
-        .user-info {
-            display: flex;
-            flex-direction: column;
-            margin-left: -7px;
-            width: 106%;
-        }
-
-        .biography-container {
-            padding-top: 41%;
-            margin-left: -95px;
-        }
-
-        .stats {
-            margin-left: 0;
-        }
-
-
-        .links {
-            font-size: 0.5rem;
-            margin-left: -46px;
-            margin-top: 18px;
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            justify-content: start;
-            align-items: center;
-            width: 151%;
-        }
-        
-        .links > div {
-            margin-left: -170px;
-            margin-top: -20px;
-        }
-
-        .links > img {
-            margin-right: 10px;
-        }
-
-       .twitter {
-           opacity: 0.5;
-       }
-
-       .stats {
-           font-size: 0.8rem;
-           text-align: center;
-           padding: 10px;
-       }
-
-       .repository-container {
-           padding: 10px;
-       }
-
-       .follower-container {
-           padding: 10px;
-       }
-
-       .following-container {
-           padding: 10px;
-       }
+    .twitter {
+      opacity: 0.5;
     }
 
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary-blue: #0079ff;
-    --primary-blue-hover: #60abff;
-    --primary-text: #ffffff;
-    --primary-text-neutral: #ffffff;
-    --primary-text-bold: #ffffff;
-    --primary-background: #141d2f;
-    --primary-background-light: #1e2a47;
-    --primary-text-error: #f74646;
-    --primary-filter: initial;
-    --mode-text: "LIGHT";
-    --mode-image: url("/assets/icon-sun.svg");
-    --primary-box-shadow: 0;
+  /************* Phones 375  ******************/
+  @media screen and (max-width: 375px) {
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --primary-blue: #0079ff;
+      --primary-blue-hover: #60abff;
+      --primary-text: #ffffff;
+      --primary-text-neutral: #ffffff;
+      --primary-text-bold: #ffffff;
+      --primary-background: #141d2f;
+      --primary-background-light: #1e2a47;
+      --primary-text-error: #f74646;
+      --primary-filter: initial;
+      --mode-text: "LIGHT";
+      --mode-image: url("/assets/icon-sun.svg");
+      --primary-box-shadow: 0;
+    }
   }
 }
- }
-
