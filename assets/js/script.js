@@ -10,7 +10,7 @@ const city = document.querySelector(".city");
 const blogGit = document.querySelector(".blog");
 const blogUrl = document.getElementById('website');
 const twitter = document.querySelector(".twitter");
-const company = document.querySelector(".company"); 
+const companyGit = document.querySelector(".company"); 
 const companyUrl = document.getElementById("company");
 const body = document.querySelector("body");
 const button = document.querySelector(".search-btn");
@@ -47,10 +47,9 @@ const loadUser = (username) => {
         blogGit.innerHTML =  data.blog === "" || data.blog === null ? (blogGit.parentElement.classList.add("not-available"),"Not Available") : data.blog;
         blogUrl.innerHTML = `<a target="_blank"  href="${data.blog}">${data.blog}</a>`;
         twitter.innerHTML = data.twitter_username === null || data.twitter_username === "" ? (twitter.parentElement.classList.add("not-available"),"Not Available") : data.twitter_username;
-        company.innerHTML = data.company === "" || data.company === null ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company;
-       // companyUrl.innerHTML = `<a target="_blank" href="${data.company}">${data.company}</a>` ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company; ;
-        
-       
+      //  companyGit.innerHTML = data.company === "" || data.company === null ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company;
+        company.innerHTML = `<a target="_blank" href="${data.organizations_url}">${data.company}</a>` 
+
 
     }).catch((error)=>{
         console.log(error);

@@ -345,13 +345,17 @@ header {
   color: var(--primary-text);
 }
 
-#website:hover {
+.blog:hover {
   text-decoration: underline;
 }
 
 .not-available {
   opacity: 0.5;
 }
+/* 
+.twitter {
+  opacity: .5;
+} */
 
 .company {
   text-decoration: none;
@@ -367,6 +371,10 @@ a {
   text-decoration: none;
   color: var(--primary-text);
 
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 
