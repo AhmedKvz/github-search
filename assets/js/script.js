@@ -8,9 +8,10 @@ const follower = document.querySelector(".follower");
 const following = document.querySelector(".following");
 const city = document.querySelector(".city");
 const blogGit = document.querySelector(".blog");
-const blogUrl = document.querySelector('a');
+const blogUrl = document.getElementById('website');
 const twitter = document.querySelector(".twitter");
-const company = document.querySelector(".company");
+const company = document.querySelector(".company"); 
+const companyUrl = document.getElementById("company");
 const body = document.querySelector("body");
 const button = document.querySelector(".search-btn");
 const input = document.querySelector(".search-input");
@@ -21,7 +22,8 @@ const colorLight = document.querySelector(".color-light");
 
 const loadUser = (username) => {
     fetch(`https://api.github.com/users/${username}`).then((response)=>{
-        if(response.ok)
+        credentials: 'include'
+    if(response.ok)
         {
             return response.json();
         }
@@ -42,9 +44,12 @@ const loadUser = (username) => {
         follower.innerHTML = data.followers;
         following.innerHTML = data.following;
         city.innerHTML = data.location === "" || data.location === null ? "Not Available" : data.location;
-        blogGit.innerHTML = data.blog === "" || data.blog === null ? "Not Available" : data.blog;
+        blogGit.innerHTML =  data.blog === "" || data.blog === null ? "Not Available" : data.blog;
+        blogUrl.innerHTML = `<a target="_blank" href="${data.blog}">${data.blog}</a>`;
         twitter.innerHTML = data.twitter_username === null || data.twitter_username === "" ? (twitter.parentElement.classList.add("not-available"),"Not Available") : data.twitter_username;
-        company.innerHTML = data.company === "" || data.company === null ? "Not Available" : data.company;
+        // company.innerHTML = data.company === "" || data.company === null ? "Not Available" : data.company;
+        companyUrl.innerHTML = `<a target="_blank" href="${data.company}">${data.company}</a>` 
+
     }).catch((error)=>{
         console.log(error);
     })

@@ -17,6 +17,7 @@
   --primary-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   --mask-colour: #4b6a9b;
   --button: #ffffff;
+  --search-bar: #222731
 }
 
 :root.dark {
@@ -35,6 +36,8 @@
   --primary-box-shadow: 0;
   --mask-colour: #f3eaea;
   --button: #ffffff;
+  --search-bar: ##ffffff
+
 }
 
 * {
@@ -162,6 +165,7 @@ header {
   margin: 22px;
   border: 0;
   outline: 0;
+  font-family: 'Space Mono';
   font-size: 18px;
   line-height: 25px;
   color: var(--primary-text-bold);
@@ -196,6 +200,8 @@ header {
   display: none;
   width: 25%;
   color: var(--primary-text-error);
+  font-size: 15px;
+  font-style: bold;
 }
 
 .visible {
@@ -584,6 +590,10 @@ header {
 
     .twitter {
       opacity: 0.5;
+    }
+
+    .no-result {
+      opacity: .5;
     }
   }
 
