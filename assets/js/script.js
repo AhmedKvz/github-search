@@ -50,6 +50,8 @@ const loadUser = (username) => {
         company.innerHTML = data.company === "" || data.company === null ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company;
        // companyUrl.innerHTML = `<a target="_blank" href="${data.company}">${data.company}</a>` ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company; ;
         
+       
+
     }).catch((error)=>{
         console.log(error);
     })

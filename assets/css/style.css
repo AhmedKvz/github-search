@@ -345,7 +345,7 @@ header {
   color: var(--primary-text);
 }
 
-.blog:hover {
+#website:hover {
   text-decoration: underline;
 }
 
@@ -361,7 +361,7 @@ header {
 .company:hover {
   text-decoration: underline;
   color: var(--primary-text);
-}
+} 
 
 a { 
   text-decoration: none;
