@@ -103,6 +103,8 @@ body {
   color: var(--hover-mode);
 }
 
+
+
 /************* Change of Theme ******************/
 
 /************* Header  ******************/
@@ -135,6 +137,7 @@ header {
 .mode-picture:hover {
   color: var(--mask-colour);
 }
+
 
 /************* Header  ******************/
 
@@ -328,6 +331,7 @@ header {
   font-size: 0.938rem;
   font-weight: 400;
   color: var(--primary-text);
+  text-decoration: none;
 }
 
 .links > div div img {
@@ -358,6 +362,13 @@ header {
   text-decoration: underline;
   color: var(--primary-text);
 }
+
+a { 
+  text-decoration: none;
+  color: var(--primary-text);
+
+}
+
 
 /************* User Card  ******************/
 
@@ -588,13 +599,20 @@ header {
       margin-right: 10px;
     }
 
-    .twitter {
-      opacity: 0.5;
-    }
-
-    .no-result {
+    .not-available {
       opacity: .5;
     }
+
+    .link-color {
+      color: #f6f8ff;
+    }
+   
+    .blog-container p a {
+      text-decoration: none;
+    }
+   
+    
+
   }
 
   /************* Phones 414  ******************/

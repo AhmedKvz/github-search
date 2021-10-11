@@ -43,13 +43,13 @@ const loadUser = (username) => {
         repository.innerHTML = data.public_repos;
         follower.innerHTML = data.followers;
         following.innerHTML = data.following;
-        city.innerHTML = data.location === "" || data.location === null ? "Not Available" : data.location;
-        blogGit.innerHTML =  data.blog === "" || data.blog === null ? "Not Available" : data.blog;
-        blogUrl.innerHTML = `<a target="_blank" href="${data.blog}">${data.blog}</a>`;
+        city.innerHTML = data.location === "" || data.location === null ? (city.parentElement.classList.add("not-available"),"Not Available") : data.location;
+        blogGit.innerHTML =  data.blog === "" || data.blog === null ? (blogGit.parentElement.classList.add("not-available"),"Not Available") : data.blog;
+        blogUrl.innerHTML = `<a target="_blank"  href="${data.blog}">${data.blog}</a>`;
         twitter.innerHTML = data.twitter_username === null || data.twitter_username === "" ? (twitter.parentElement.classList.add("not-available"),"Not Available") : data.twitter_username;
-        // company.innerHTML = data.company === "" || data.company === null ? "Not Available" : data.company;
-        companyUrl.innerHTML = `<a target="_blank" href="${data.company}">${data.company}</a>` 
-
+        company.innerHTML = data.company === "" || data.company === null ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company;
+       // companyUrl.innerHTML = `<a target="_blank" href="${data.company}">${data.company}</a>` ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company; ;
+        
     }).catch((error)=>{
         console.log(error);
     })
