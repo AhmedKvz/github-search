@@ -47,9 +47,18 @@ const loadUser = (username) => {
         blogGit.innerHTML =  data.blog === "" || data.blog === null ? (blogGit.parentElement.classList.add("not-available"),"Not Available") : data.blog;
         blogUrl.innerHTML = `<a target="_blank"  href="${data.blog}">${data.blog}</a>`;
         twitter.innerHTML = data.twitter_username === null || data.twitter_username === "" ? (twitter.parentElement.classList.add("not-available"),"Not Available") : data.twitter_username;
-      //  companyGit.innerHTML = data.company === "" || data.company === null ? (company.parentElement.classList.add("not-available"),"Not Available") : data.company;
-        company.innerHTML = `<a target="_blank" href="${data.organizations_url}">${data.company}</a>` 
+        if(data.company)
+        {
+            companyGit.innerHTML = `<a href = '${data.company}'>${data.company}</a>`
+            companyGit.classList.remove('.disable');
+        }
+        else
+        {
+            companyGit.innerHTML = `<a>Not avaliable</a>`;
+            companyGit.classList.add('disable');
+        }
 
+      
 
     }).catch((error)=>{
         console.log(error);

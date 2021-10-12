@@ -17,7 +17,7 @@
   --primary-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   --mask-colour: #4b6a9b;
   --button: #ffffff;
-  --search-bar: #222731
+  --search-bar: #222731;
 }
 
 :root.dark {
@@ -36,8 +36,7 @@
   --primary-box-shadow: 0;
   --mask-colour: #f3eaea;
   --button: #ffffff;
-  --search-bar: ##ffffff
-
+  --search-bar: ##ffffff;
 }
 
 * {
@@ -103,8 +102,6 @@ body {
   color: var(--hover-mode);
 }
 
-
-
 /************* Change of Theme ******************/
 
 /************* Header  ******************/
@@ -138,7 +135,6 @@ header {
   color: var(--mask-colour);
 }
 
-
 /************* Header  ******************/
 
 /************* Search GitHUb  ******************/
@@ -168,7 +164,7 @@ header {
   margin: 22px;
   border: 0;
   outline: 0;
-  font-family: 'Space Mono';
+  font-family: "Space Mono";
   font-size: 18px;
   line-height: 25px;
   color: var(--primary-text-bold);
@@ -352,10 +348,10 @@ header {
 .not-available {
   opacity: 0.5;
 }
-/* 
+
 .twitter {
-  opacity: .5;
-} */
+  opacity: 0.5;
+}
 
 .company {
   text-decoration: none;
@@ -365,18 +361,23 @@ header {
 .company:hover {
   text-decoration: underline;
   color: var(--primary-text);
-} 
+}
 
-a { 
+a {
   text-decoration: none;
   color: var(--primary-text);
-
 }
 
 a:hover {
   text-decoration: underline;
 }
 
+a.disable {
+  opacity: .5;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
 
 /************* User Card  ******************/
 
@@ -608,19 +609,16 @@ a:hover {
     }
 
     .not-available {
-      opacity: .5;
+      opacity: 0.5;
     }
 
     .link-color {
       color: #f6f8ff;
     }
-   
+
     .blog-container p a {
       text-decoration: none;
     }
-   
-    
-
   }
 
   /************* Phones 414  ******************/
