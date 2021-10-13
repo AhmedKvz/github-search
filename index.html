@@ -5,54 +5,129 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <title>devfinder</title>
 </head>
 
 <body>
-  <main>
-    <header>
-      <div class="header">
-        <h1>devfinder</h1>
-        <div class="light">
-          <p>DARK</p><img src="./assets/icon-moon.svg" alt="">
+  <div class="wrapper">
+    <!-- Main Container Start -->
+    <main class="container">
+
+      <!-- Header Start -->
+      <header>
+
+        <h1 class="logo">devfinder</h1>
+
+        <div class="color-theme">
+          <p class="light dark color-light"></p><span class="mode-picture">
+            <img src='' alt="">
+          </span>
+
+      </header>
+            <!-- Header End -->
+
+
+      <!-- GitHub form search start -->
+      <form class="search-gitHub" action="#" novalidate="true" preveventsubmit="true" autocomplete="off">
+        <input class="search-input" type="text" placeholder="Search GitHub username_" autocomplete="off" required="">
+        <span class="search-err no-result">No results</span>
+        <input class="search-btn" type="submit" value="Search" name="Search">
+      </form>
+            <!-- GitHub form search End -->
+
+            <!-- Card User Start -->
+      <div class="card">
+        <div class="user-container-main">
+          <div class="avatar">
+            <img id="profile-img" src="" alt="image">
+          </div>
+          <div class="user-info">
+            <div class="name-date">
+              <div class="name">
+                Name
+              </div>
+              <div class="date">
+                Date
+              </div>
+            </div>
+            <div class="username-container">
+              <div class="username">
+                Username
+              </div>
+            </div>
+            <div class="biography-container">
+              <div class="biography">
+                Bio
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
 
-    <section class="form">
-      <div class="header-bottom">
-        <img src="./assets/icon-search.svg" alt="">
-        <input type="text" placeholder="Search GitHub username_">
-        <button>Search</button>
-      </div>
-
-      <div class="content">
-        <div class="content-nav">
-          <img src="/starter-code/assets/icon-company.svg" alt="">
+        <!-- User Stats Start-->
+        <div class="stats">
+          <div class="repository-container">
+            <div class="repo-name">
+              Repos
+            </div>
+            <div class="repository">
+              0
+            </div>
+          </div>
+          <div class="follower-container">
+            <div class="follower-name">
+              Followers
+            </div>
+            <div class="follower">
+              0
+            </div>
+          </div>
+          <div class="following-container">
+            <div class="following-name">
+              Following
+            </div>
+            <div class="following">
+              0
+            </div>
+          </div>
         </div>
+          <!-- User Stats End-->
 
 
-
+        <!-- User Links Start -->
+        <div class="links">
+          <div class="city-blog-container">
+            <div class="city-container">
+              <img src="./assets/icon-location.svg" alt="abcd">
+              <span class="city">City</span>
+            </div>
+            <div class="blog-container">
+              <img src="./assets/icon-website.svg" alt="abcd">
+              <p id="website"><a href="" target="_blank" class="blog"></a></p>
+              
+            </div>
+          </div>
+          <div class="twitter-company-container">
+            <div class="twitter-container">
+              <img src="./assets/icon-twitter.svg" alt="abcd">
+              <span class="twitter">Twitter</span>
+            </div>
+            <div class="company-container">
+              <img id="company-img" class="company-img" src="./assets/icon-company.svg" alt="abcd">
+              <p id="company"></p>
+              <a href="" class="company"></a>
+            </div>
+          </div>
+        </div>
+                <!-- User Links End -->
 
       </div>
+      <!-- Card User End -->
 
-
-
-
-
-    </section>
-
-
-  </main>
-
-
-  
-  Joined
-
-  Repos
-  Followers
-  Following
-
+    </main>
+     <!-- Main Container End -->
+  </div>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
