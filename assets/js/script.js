@@ -94,14 +94,18 @@ window.addEventListener("load",(e)=>{
     console.log(localStorage);
 })
 button.addEventListener("click",function(){
+
+if(input.value !== ""){
+    
     loadUser(input.value);
-})
+}
+});
 input.addEventListener("keypress",function(e){
-    if(e.key==="Enter")
+    if(e.key==="Enter" )
     {
         loadUser(input.value);
     }
-})
+});
 
 
 colorLight.addEventListener("click",function(){
@@ -131,5 +135,5 @@ colorLight.addEventListener("click",function(){
         }
     }
     console.log(localStorage);
-})
+});
 
